@@ -1,0 +1,141 @@
+/* Panel opened by the clock button next to the mic */
+.vc-scheduledStatus-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 260px;
+    padding: 12px;
+    border-radius: 8px;
+    background: var(--background-floating, var(--background-surface-highest, #111214));
+    box-shadow: var(--elevation-high, 0 8px 16px rgb(0 0 0 / 24%));
+    color: var(--text-normal);
+    font-size: 14px;
+}
+
+.vc-scheduledStatus-title {
+    font-weight: 600;
+    color: var(--header-primary, var(--text-normal));
+}
+
+.vc-scheduledStatus-current {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: var(--background-modifier-accent, rgb(255 255 255 / 6%));
+    font-size: 13px;
+}
+
+.vc-scheduledStatus-currentText {
+    flex: 1;
+}
+
+/* Plain buttons: no browser border, same font as the panel (:where keeps the rules below stronger) */
+:where(.vc-scheduledStatus-panel) button {
+    border: none;
+    font: inherit;
+}
+
+.vc-scheduledStatus-statuses {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.vc-scheduledStatus-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: none;
+    color: var(--interactive-normal, var(--text-normal));
+    text-align: left;
+    cursor: pointer;
+}
+
+.vc-scheduledStatus-option:hover {
+    background: var(--background-modifier-hover);
+    color: var(--interactive-hover, var(--text-normal));
+}
+
+.vc-scheduledStatus-selected,
+.vc-scheduledStatus-selected:hover {
+    background: var(--background-modifier-selected);
+    color: var(--interactive-active, var(--text-normal));
+}
+
+.vc-scheduledStatus-dot {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.vc-scheduledStatus-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vc-scheduledStatus-input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 1px solid var(--background-modifier-accent, rgb(255 255 255 / 10%));
+    border-radius: 4px;
+    background: var(--input-background, var(--background-tertiary, #1e1f22));
+    color: var(--text-normal);
+    font-size: 14px;
+}
+
+.vc-scheduledStatus-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.vc-scheduledStatus-chip {
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: var(--background-modifier-accent, rgb(255 255 255 / 8%));
+    color: var(--interactive-normal, var(--text-normal));
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.vc-scheduledStatus-chip:hover {
+    background: var(--background-modifier-hover);
+    color: var(--interactive-hover, var(--text-normal));
+}
+
+.vc-scheduledStatus-submit {
+    padding: 8px;
+    border-radius: 4px;
+    background: var(--brand-500, #5865f2);
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.vc-scheduledStatus-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.vc-scheduledStatus-link {
+    padding: 0;
+    background: none;
+    color: var(--text-link, #00a8fc);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.vc-scheduledStatus-link:hover {
+    text-decoration: underline;
+}
+
+/* Wraps the clock button so the panel knows where to open */
+.vc-scheduledStatus-anchor {
+    display: flex;
+}
